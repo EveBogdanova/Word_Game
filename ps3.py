@@ -66,8 +66,11 @@ def get_word_score(word, n):
     
     
 def display_hand(hand):
-    display = list(hand.keys())
-    return ' '.join(display)
+    hand_letters = []
+    for letter in hand.keys():
+        for i in range(hand.get(letter)):
+            hand_letters.append(letter)
+    return ' '.join(hand_letters)
 
 
 def deal_hand(n):
